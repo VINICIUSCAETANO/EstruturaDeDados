@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/lista/ListaSimplesmenteEncadeada.java</file>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/exception/EmptyListException.java</file>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturasestaticas/Aluno.java</file>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/main/Main.java</file>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/lista/NodoSimples.java</file>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/lista/Lista.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas/EstruturaGenerica.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas/NodoSimples.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas/Lista.java</file>
             <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/gui/JFLista.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas/Pilha.java</file>
         </group>
     </open-files>
 </project-private>

@@ -5,8 +5,8 @@
  */
 package gui;
 
-import lista.*;
-import estruturasestaticas.*;
+import dados.Aluno;
+import estruturas.ListaSimples;
 import exception.EmptyListException;
 import javax.swing.JOptionPane;
 
@@ -16,14 +16,14 @@ import javax.swing.JOptionPane;
  */
 public class JFLista extends javax.swing.JFrame {
 
-    Lista<Aluno> listaAlunos;
+    ListaSimples<Aluno> listaAlunos;
 
     /**
      * Creates new form JFLista
      */
     public JFLista() {
         initComponents();
-        listaAlunos = new Lista<>("Lista de alunos");
+        listaAlunos = new ListaSimples<>("Lista de alunos");
     }
 
     /**

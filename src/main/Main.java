@@ -5,8 +5,8 @@
  */
 package main;
 
-import lista.*;
-import estruturasestaticas.*;
+import dados.Aluno;
+import estruturas.ListaSimples;
 
 /**
  *
@@ -15,7 +15,7 @@ import estruturasestaticas.*;
 public class Main {
         public static void main(String[] args) {
 	// write your code here
-        Lista <Aluno> lista = new Lista <>("Lista de alunos");
+        ListaSimples <Aluno> lista = new ListaSimples <>("Lista de alunos");
         lista.insereNoFim(new Aluno("Cleber", 25));
         lista.insereNoFim(new Aluno("Vinicius", 18));
         lista.insereNoInicio(new Aluno("Suelen", 33));

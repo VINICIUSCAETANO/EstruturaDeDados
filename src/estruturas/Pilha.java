@@ -3,32 +3,33 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lista;
+package estruturas;
 
-import exception.*;
+import exception.EmptyListException;
+import interfaces.PilhaI;
 
 /**
  *
  * @author Vinicius
  */
-public class Lista<T> implements ListaSimplesmenteEncadeada<T> {
-
+public class Pilha<T> implements PilhaI<T> {
+    
     private NodoSimples<T> primeiro;
     private NodoSimples<T> ultimo;
     private String nome;
     private int size;
-
-    public Lista() {
+    
+    public Pilha() {
         this("lista");
     }
 
-    public Lista(String nome) {
+    public Pilha(String nome) {
         this.nome = nome;
         primeiro = ultimo = null;
         size = 0;
     }
-
-    @Override
+    
+     @Override
     public void insereNoFim(T item) {
         if (isVazio()) {
             primeiro = ultimo = new NodoSimples<>(item);
@@ -39,31 +40,7 @@ public class Lista<T> implements ListaSimplesmenteEncadeada<T> {
     }
 
     @Override
-    public void insereNoInicio(T item) {
-        if (isVazio()) {
-            primeiro = ultimo = new NodoSimples<>(item);
-        } else {
-            primeiro = new NodoSimples<>(item, primeiro);
-        }
-        size++;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder strbuilder = new StringBuilder();
-        if (isVazio()) {
-            throw new EmptyListException("Lista vazia");
-        }
-        NodoSimples<T> aux = primeiro;
-        while (aux != null) {
-            strbuilder.append(aux.getDado());
-            aux = aux.prox;
-        }
-        return strbuilder.toString();
-    }
-
-    @Override
-    public String visualizaLista() throws EmptyListException {
+    public String visualizaPilha() throws EmptyListException {
         StringBuilder strbuilder = new StringBuilder(nome + "\n");
         if (isVazio()) {
             throw new EmptyListException("Lista vazia");
@@ -74,18 +51,6 @@ public class Lista<T> implements ListaSimplesmenteEncadeada<T> {
             aux = aux.prox;
         }
         return strbuilder.toString();
-    }
-
-    @Override
-    public T removeDoInicio() throws EmptyListException {
-        if (isVazio()) {
-            throw new EmptyListException("Lista vazia");
-        } else {
-            size--;
-            NodoSimples<T> aux = primeiro;
-            primeiro = primeiro.prox;
-            return aux.getDado();
-        }
     }
 
     @Override
@@ -109,8 +74,27 @@ public class Lista<T> implements ListaSimplesmenteEncadeada<T> {
         return size;
     }
 
-    @Override
     public boolean isVazio() {
         return primeiro == null;
+    }
+
+    @Override
+    public void esvaziaPilha() {
+       primeiro = ultimo = null;
+       size = 0; 
+    }
+      
+    @Override
+    public String toString() {
+        StringBuilder strbuilder = new StringBuilder();
+        if (isVazio()) {
+            throw new EmptyListException("Lista vazia");
+        }
+        NodoSimples<T> aux = primeiro;
+        while (aux != null) {
+            strbuilder.append(aux.getDado());
+            aux = aux.prox;
+        }
+        return strbuilder.toString();
     }
 }
