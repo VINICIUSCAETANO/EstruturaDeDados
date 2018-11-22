@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas/EstruturaGenerica.java</file>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas/NodoSimples.java</file>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas/Lista.java</file>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/gui/JFLista.java</file>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas/Pilha.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_duplas/NodoDuplo.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_duplas/ListaDupla.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_simples/Fila.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_simples/ListaSimples.java</file>
         </group>
     </open-files>
 </project-private>

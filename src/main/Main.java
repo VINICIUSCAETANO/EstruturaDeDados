@@ -6,23 +6,27 @@
 package main;
 
 import dados.Aluno;
-import estruturas.ListaSimples;
+import estruturas_duplas.ContainerGenerico;
+import estruturas_duplas.ListaDupla;
+import estruturas_duplas.PilhaDupla;
+import estruturas_simples.ListaSimples;
 
 /**
  *
  * @author Vinicius
  */
 public class Main {
-        public static void main(String[] args) {
-	// write your code here
-        ListaSimples <Aluno> lista = new ListaSimples <>("Lista de alunos");
-        lista.insereNoFim(new Aluno("Cleber", 25));
-        lista.insereNoFim(new Aluno("Vinicius", 18));
-        lista.insereNoInicio(new Aluno("Suelen", 33));
-        System.out.println(lista.visualizaLista());
-        lista.removeDoInicio();
-        System.out.println(lista);
-        lista.removeDoFim();
-        System.out.println(lista.visualizaLista());
+
+    public static void main(String[] args) {
+
+        long inicio;
+        long fim;
+        // write your code here
+        PilhaDupla<Aluno> pilha = new PilhaDupla<>();
+        Aluno aluno = new Aluno("Roberto", 13);
+        pilha.insereNoFim(aluno);
+        System.out.println(pilha.consultarFimInicio());
+        pilha.esvaziaEstrutura();
+        System.out.println(pilha.consultarFimInicio());
     }
 }
