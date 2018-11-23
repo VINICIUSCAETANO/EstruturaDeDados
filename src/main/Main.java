@@ -10,6 +10,7 @@ import estruturas_duplas.ContainerGenerico;
 import estruturas_duplas.ListaDupla;
 import estruturas_duplas.PilhaDupla;
 import estruturas_simples.ListaSimples;
+import exception.EmptyListException;
 
 /**
  *
@@ -18,15 +19,13 @@ import estruturas_simples.ListaSimples;
 public class Main {
 
     public static void main(String[] args) {
-
-        long inicio;
-        long fim;
-        // write your code here
-        PilhaDupla<Aluno> pilha = new PilhaDupla<>();
-        Aluno aluno = new Aluno("Roberto", 13);
-        pilha.insereNoFim(aluno);
-        System.out.println(pilha.consultarFimInicio());
-        pilha.esvaziaEstrutura();
-        System.out.println(pilha.consultarFimInicio());
+        ListaSimples<Aluno> lista = new ListaSimples<>();
+        for (int i = 0; i < 10000; i++) {
+            lista.insereNoInicio(new Aluno("Abbada", i));
+        }
+        System.out.println("Removendo");
+        for (int i = 0; i < 9999; i++) {
+            lista.removeDoFim();
+        }
     }
 }

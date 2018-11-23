@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfaces_estruturas_simples;
+package estruturas_simples;
 
 import exception.EmptyListException;
 
@@ -11,13 +11,13 @@ import exception.EmptyListException;
  *
  * @author Vinicius
  */
-public interface FilaI<T> {
+public interface PilhaI<T> {
     
-    public void insereNoInicio(T item);
+    public void insereNoFim(T item);
 
-    public String visualizaFila() throws EmptyListException;
+    public String visualizaPilha() throws EmptyListException;
 
     public T removeDoFim() throws EmptyListException;
 
-    public void esvaziaFila();
+    public void esvaziaPilha();
 }

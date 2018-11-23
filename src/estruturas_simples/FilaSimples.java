@@ -6,7 +6,6 @@
 package estruturas_simples;
 
 import exception.EmptyListException;
-import interfaces_estruturas_simples.FilaI;
 
 /**
  *

@@ -67,4 +67,10 @@ public class ListaDupla<T> extends ContainerGenerico<T> {
         }
         return strbf.toString();
     }
+    
+    public T remover(String nome) {
+        //TODO: logica de remocao de um nodo
+        T item = null;
+        return item;
+    }
 }

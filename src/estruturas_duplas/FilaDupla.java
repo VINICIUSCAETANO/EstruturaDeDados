@@ -29,10 +29,21 @@ public class FilaDupla<T> extends ContainerGenerico<T> {
         tamanho++;
     }
 
-    public T removeNoFim() {
-        T item = null;
-        return item;
-        //falta implementar
+      public T removeNoFim() throws EmptyListException {
+        if (isVazio()) {
+            throw new EmptyListException("Impossivel remover. Lista vazia");
+        } else if (tamanho == 1) {
+            tamanho = 0;
+            NodoDuplo<T> aux = ultimo;
+            primeiro = ultimo = null;
+            return aux.getDado();
+        } else {
+            tamanho--;
+            NodoDuplo<T> aux = ultimo;
+            ultimo = ultimo.ant;
+            ultimo.prox = null;
+            return aux.getDado();
+        }
     }
 
     public String consultarInicioFim() throws EmptyListException {

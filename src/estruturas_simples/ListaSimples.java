@@ -5,7 +5,6 @@
  */
 package estruturas_simples;
 
-import interfaces_estruturas_simples.ListaSimplesI;
 import exception.*;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -33,35 +32,35 @@ public class ListaSimples<T> implements ListaSimplesI<T> {
 
     @Override
     public void insereNoFim(T item) {
-        long inicioTempo = System.currentTimeMillis();
+        long inicioTempo = System.nanoTime();
         if (isVazio()) {
             primeiro = ultimo = new NodoSimples<>(item);
         } else {
             ultimo.prox = ultimo = new NodoSimples<>(item, null);
         }
         size++;
-        long fimTempo = System.currentTimeMillis();
+        long fimTempo = System.nanoTime();
         long dur = (fimTempo - inicioTempo);
-        System.out.println("Essa operacao levou: " + dur + " ms");
+        System.out.println("Insercao levou: " + dur + " ms");
     }
 
     @Override
     public void insereNoInicio(T item) {
-        long inicioTempo = System.currentTimeMillis();
+        long inicioTempo = System.nanoTime();
         if (isVazio()) {
             primeiro = ultimo = new NodoSimples<>(item);
         } else {
             primeiro = new NodoSimples<>(item, primeiro);
         }
-        long fimTempo = System.currentTimeMillis();
+        long fimTempo = System.nanoTime();
         long dur = (fimTempo - inicioTempo);
-        System.out.println("Essa operacao levou: " + dur + " ms");
+        System.out.println("Insercao levou: " + dur + " ms");
         size++;
     }
 
     @Override
     public String visualizaLista() throws EmptyListException {
-        long inicioTempo = System.currentTimeMillis();
+        long inicioTempo = System.nanoTime();
         StringBuilder strbuilder = new StringBuilder(nome + "\n");
         if (isVazio()) {
             throw new EmptyListException("Lista vazia");
@@ -71,31 +70,31 @@ public class ListaSimples<T> implements ListaSimplesI<T> {
             strbuilder.append(aux.getDado());
             aux = aux.prox;
         }
-        long fimTempo = System.currentTimeMillis();
+        long fimTempo = System.nanoTime();
         long dur = (fimTempo - inicioTempo);
-        System.out.println("Essa operacao levou: " + dur + " ms");
+        System.out.println("Visualizacao levou: " + dur + " ms");
         return strbuilder.toString();
     }
 
     @Override
     public T removeDoInicio() throws EmptyListException {
-        long inicioTempo = System.currentTimeMillis();
+        long inicioTempo = System.nanoTime();
         if (isVazio()) {
             throw new EmptyListException("Lista vazia");
         } else {
             size--;
             NodoSimples<T> aux = primeiro;
             primeiro = primeiro.prox;
-            long fimTempo = System.currentTimeMillis();
+            long fimTempo = System.nanoTime();
             long dur = (fimTempo - inicioTempo);
-            System.out.println("Essa operacao levou: " + dur + " ms");
+            System.out.println("Remocao levou: " + dur + " ns");
             return aux.getDado();
         }
     }
 
     @Override
     public T removeDoFim() throws EmptyListException {
-        //long inicioTempo = System.currentTimeMillis();
+        long inicioTempo = System.nanoTime();
         if (isVazio()) {
             throw new EmptyListException("Lista vazia");
         } else {
@@ -107,8 +106,9 @@ public class ListaSimples<T> implements ListaSimplesI<T> {
             T dado = aux.getDado();
             aux.prox = null;
             ultimo = aux;
-            //long fimTempo = System.currentTimeMillis();
-            //System.out.printf("Essa operacao levou: " + (long)(fimTempo - inicioTempo) + "ms\n");
+            long fimTempo = System.nanoTime();
+            long dur = (fimTempo - inicioTempo);
+            System.out.println("Remocao levou: " + dur + " ns");
             return dado;
         }
     }
