@@ -11,14 +11,16 @@ import exception.EmptyListException;
  *
  * @author Vinicius
  */
-public class FilaDupla<T> extends ContainerGenerico<T> {
+public class FilaDupla<T> extends ContainerGenerico<T> implements FilaDuplaI<T> {
 
     public FilaDupla() {
         primeiro = ultimo = null;
         tamanho = 0;
     }
 
+    @Override
     public void insereNoInicio(T item) {
+        long tempoInicio = System.nanoTime();
         if (isVazio()) {
             primeiro = ultimo = new NodoDuplo<>(item);
         } else {
@@ -26,27 +28,37 @@ public class FilaDupla<T> extends ContainerGenerico<T> {
             primeiro = new NodoDuplo<>(item, aux, null);
             aux.setAnt(primeiro);
         }
+        long tempoFim = System.nanoTime();
+        System.out.println("Tempo de insercao: " + (tempoFim - tempoInicio) + " ns\n");
         tamanho++;
     }
 
-      public T removeNoFim() throws EmptyListException {
+    @Override
+    public T removeNoFim() throws EmptyListException {
+        long tempoInicio = System.nanoTime();
         if (isVazio()) {
             throw new EmptyListException("Impossivel remover. Lista vazia");
         } else if (tamanho == 1) {
             tamanho = 0;
             NodoDuplo<T> aux = ultimo;
             primeiro = ultimo = null;
+            long tempoFim = System.nanoTime();
+            System.out.println("Tempo de remocao: " + (tempoFim - tempoInicio) + " ns\n");
             return aux.getDado();
         } else {
             tamanho--;
             NodoDuplo<T> aux = ultimo;
             ultimo = ultimo.ant;
             ultimo.prox = null;
+            long tempoFim = System.nanoTime();
+            System.out.println("Tempo de remocao: " + (tempoFim - tempoInicio) + " ns\n");
             return aux.getDado();
         }
     }
 
+    @Override
     public String consultarInicioFim() throws EmptyListException {
+        long tempoInicio = System.nanoTime();
         StringBuilder strbf = new StringBuilder();
         if (isVazio()) {
             throw new EmptyListException("lista Vazia");
@@ -56,6 +68,8 @@ public class FilaDupla<T> extends ContainerGenerico<T> {
                 strbf.append(aux.getDado());
                 aux = aux.prox;
             }
+            long tempoFim = System.nanoTime();
+            System.out.println("Tempo de consulta: " + (tempoFim - tempoInicio) + " ns\n");
         }
         return strbf.toString();
     }

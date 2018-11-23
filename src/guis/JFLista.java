@@ -17,14 +17,14 @@ import javax.swing.JOptionPane;
  */
 public class JFLista extends javax.swing.JFrame {
 
-    ListaDupla<Aluno> listaAlunos;
+    ListaSimples<Aluno> listaAlunos;
 
     /**
      * Creates new form JFLista
      */
     public JFLista() {
         initComponents();
-        listaAlunos = new ListaDupla<>();
+        listaAlunos = new ListaSimples<>();
     }
 
     /**
@@ -272,7 +272,7 @@ public class JFLista extends javax.swing.JFrame {
     }
 
     private void atualizaVisualizacao() {
-        jTAImprimeLista.setText(listaAlunos.consultarInicioFim());
+        jTAImprimeLista.setText(listaAlunos.visualizaLista());
     }
 
     private void limpaCampos() {

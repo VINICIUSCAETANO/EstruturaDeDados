@@ -41,7 +41,7 @@ public class ListaSimples<T> implements ListaSimplesI<T> {
         size++;
         long fimTempo = System.nanoTime();
         long dur = (fimTempo - inicioTempo);
-        System.out.println("Insercao levou: " + dur + " ms");
+        System.out.println("Insercao levou: " + dur + " ns");
     }
 
     @Override
@@ -54,7 +54,7 @@ public class ListaSimples<T> implements ListaSimplesI<T> {
         }
         long fimTempo = System.nanoTime();
         long dur = (fimTempo - inicioTempo);
-        System.out.println("Insercao levou: " + dur + " ms");
+        System.out.println("Insercao levou: " + dur + " ns");
         size++;
     }
 
