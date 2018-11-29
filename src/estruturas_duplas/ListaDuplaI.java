@@ -16,5 +16,5 @@ public interface ListaDuplaI<T> {
     void insereNoFim(T item);
     String consultarInicioFim() throws EmptyListException;
     String consultarFimInicio() throws EmptyListException;
-    T remover(String nome);
+    String remover(T item);
 }

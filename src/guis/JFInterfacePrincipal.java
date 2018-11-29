@@ -241,8 +241,8 @@ public class JFInterfacePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jTPlataformaActionPerformed
 
     private void jBRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRemoverActionPerformed
-        String nome = jTRemove.getText();
-        lista.remover(nome);
+        Jogo jogo = new Jogo ("Dark Souls", "","","", "");
+        lista.remover(jogo);
         atualizaVisualizacao();
         jTRemove.setText("");
     }//GEN-LAST:event_jBRemoverActionPerformed

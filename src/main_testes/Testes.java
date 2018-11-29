@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package main_testes;
 
 import dados.Aluno;
 import dados.Jogo;
@@ -17,7 +17,7 @@ import exception.EmptyListException;
  *
  * @author Vinicius
  */
-public class Main {
+public class Testes {
 
     public static void main(String[] args) {
         ListaSimples<Aluno> lista = new ListaSimples<>();
@@ -27,6 +27,13 @@ public class Main {
         System.out.println("Removendo");
         for (int i = 0; i < 99; i++) {
             lista.removeDoFim();
+        }
+        
+        ListaDupla<Jogo> listaJogos = new ListaDupla<>();
+        try {
+            listaJogos.consultarInicioFim();
+        } catch (EmptyListException e) {
+            System.out.println("Deu erro de lista vazia");
         }
     }
 }

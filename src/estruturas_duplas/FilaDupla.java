@@ -38,7 +38,9 @@ public class FilaDupla<T> extends ContainerGenerico<T> implements FilaDuplaI<T> 
         long tempoInicio = System.nanoTime();
         if (isVazio()) {
             throw new EmptyListException("Impossivel remover. Lista vazia");
-        } else if (tamanho == 1) {
+        } 
+        
+        if (tamanho == 1) {
             tamanho = 0;
             NodoDuplo<T> aux = ultimo;
             primeiro = ultimo = null;
@@ -62,15 +64,16 @@ public class FilaDupla<T> extends ContainerGenerico<T> implements FilaDuplaI<T> 
         StringBuilder strbf = new StringBuilder();
         if (isVazio()) {
             throw new EmptyListException("lista Vazia");
-        } else {
-            NodoDuplo<T> aux = primeiro;
-            while (aux != null) {
-                strbf.append(aux.getDado());
-                aux = aux.prox;
-            }
-            long tempoFim = System.nanoTime();
-            System.out.println("Tempo de consulta: " + (tempoFim - tempoInicio) + " ns\n");
         }
+
+        NodoDuplo<T> aux = primeiro;
+        while (aux != null) {
+            strbf.append(aux.getDado());
+            aux = aux.prox;
+        }
+        long tempoFim = System.nanoTime();
+        System.out.println("Tempo de consulta: " + (tempoFim - tempoInicio) + " ns\n");
+
         return strbf.toString();
     }
 }

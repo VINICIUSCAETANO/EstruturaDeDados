@@ -54,13 +54,14 @@ public class ListaDupla<T> extends ContainerGenerico<T> implements ListaDuplaI<T
         StringBuilder strbf = new StringBuilder();
         if (isVazio()) {
             throw new EmptyListException("lista Vazia");
-        } else {
-            NodoDuplo<T> aux = primeiro;
-            while (aux != null) {
-                strbf.append(aux.getDado());
-                aux = aux.prox;
-            }
         }
+
+        NodoDuplo<T> aux = primeiro;
+        while (aux != null) {
+            strbf.append(aux.getDado());
+            aux = aux.prox;
+        }
+
         long tempoFim = System.nanoTime();
         System.out.println("Tempo de consulta: " + (tempoFim - tempoInicio) + " ns\n");
         return strbf.toString();
@@ -70,15 +71,17 @@ public class ListaDupla<T> extends ContainerGenerico<T> implements ListaDuplaI<T
     public String consultarFimInicio() throws EmptyListException {
         long tempoInicio = System.nanoTime();
         StringBuilder strbf = new StringBuilder();
+
         if (isVazio()) {
             throw new EmptyListException("lista Vazia");
-        } else {
-            NodoDuplo<T> aux = ultimo;
-            while (aux != null) {
-                strbf.append(aux.getDado());
-                aux = aux.ant;
-            }
         }
+        
+        NodoDuplo<T> aux = ultimo;
+        while (aux != null) {
+            strbf.append(aux.getDado());
+            aux = aux.ant;
+        }
+
         long tempoFim = System.nanoTime();
         System.out.println("Tempo de consulta: " + (tempoFim - tempoInicio) + " ns\n");
         return strbf.toString();
@@ -88,7 +91,9 @@ public class ListaDupla<T> extends ContainerGenerico<T> implements ListaDuplaI<T
         long tempoInicio = System.nanoTime();
         if (isVazio()) {
             throw new EmptyListException("Impossivel remover. Lista vazia");
-        } else if (tamanho == 1) {
+        } 
+        
+        if (tamanho == 1) {
             tamanho = 0;
             NodoDuplo<T> aux = ultimo;
             primeiro = ultimo = null;
@@ -105,14 +110,28 @@ public class ListaDupla<T> extends ContainerGenerico<T> implements ListaDuplaI<T
             return aux.getDado();
         }
     }
-    
-    public T removerNoInicio() {
-         throw new UnsupportedOperationException("Not supported yet.");
-    }
 
     @Override
-    public T remover(String nome) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String remover(T item) throws EmptyListException {
+        if (isVazio()) {
+            throw new EmptyListException("Impossivel remover! Lista vazia");
+        }
+        
+        if (tamanho == 1) {
+            esvaziaEstrutura();
+            return "Removeu um item";
+        }
+        //tamanho >= 2
+        NodoDuplo<T> nodo = primeiro;
+        while (nodo != null) {
+            if (nodo.getDado().equals(item)) {
+                // nodo encontrado pelo nome
+                //TODO: remover nodo
+                //reduzir tamanho
+                return "Entrada removida com sucesso";
+            }
+            nodo = nodo.prox;
+        }
+        return "Entrada nao encontrada. Nao removida";
     }
-
 }

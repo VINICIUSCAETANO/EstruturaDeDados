@@ -5,6 +5,8 @@
  */
 package dados;
 
+import java.util.Objects;
+
 /**
  *
  * @author Vinicius
@@ -68,4 +70,24 @@ public class Jogo {
     public String toString() {
         return "Nome : " + nome + ", Genero : " + genero + ", Produtora : " + produtora + ", Ano : " + ano + ", Plataforma : " + plataforma + '\n';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Jogo other = (Jogo) obj;
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }

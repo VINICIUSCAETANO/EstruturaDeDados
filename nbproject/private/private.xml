@@ -3,10 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_duplas/NodoDuplo.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/dados/Jogo.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_simples/FilaSimples.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_duplas/FilaDupla.java</file>
             <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_duplas/ListaDupla.java</file>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_simples/Fila.java</file>
-            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_simples/ListaSimples.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/main/Main.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/dados/Aluno.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/guis/JFInterfacePrincipal.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_duplas/NodoDuplo.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_duplas/PilhaDuplaI.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/guis/JFLista.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/exception/EmptyListException.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_duplas/ContainerGenerico.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_duplas/ListaDuplaI.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_duplas/PilhaDupla.java</file>
+            <file>file:/Users/Vinicius/NetBeansProjects/EstruturaDeDados/src/estruturas_duplas/FilaDuplaI.java</file>
         </group>
     </open-files>
 </project-private>
