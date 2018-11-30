@@ -12,7 +12,7 @@ import exception.EmptyListException;
  * @author Vinicius
  */
 public interface FilaDuplaI<T> {
-    void insereNoInicio(T item);
-    T removeNoFim() throws EmptyListException;
-    String consultarInicioFim() throws EmptyListException;
+    void enfileirarItem(T item);
+    T desenfileirarItem() throws EmptyListException;
+    String consultarFila() throws EmptyListException;
 }

@@ -75,7 +75,7 @@ public class ListaDupla<T> extends ContainerGenerico<T> implements ListaDuplaI<T
         if (isVazio()) {
             throw new EmptyListException("lista Vazia");
         }
-        
+
         NodoDuplo<T> aux = ultimo;
         while (aux != null) {
             strbf.append(aux.getDado());
@@ -87,12 +87,13 @@ public class ListaDupla<T> extends ContainerGenerico<T> implements ListaDuplaI<T
         return strbf.toString();
     }
 
+    @Override
     public T removerNoFim() {
         long tempoInicio = System.nanoTime();
         if (isVazio()) {
             throw new EmptyListException("Impossivel remover. Lista vazia");
-        } 
-        
+        }
+
         if (tamanho == 1) {
             tamanho = 0;
             NodoDuplo<T> aux = ultimo;
@@ -112,26 +113,40 @@ public class ListaDupla<T> extends ContainerGenerico<T> implements ListaDuplaI<T
     }
 
     @Override
-    public String remover(T item) throws EmptyListException {
+    public T remover(T item) throws EmptyListException {
         if (isVazio()) {
             throw new EmptyListException("Impossivel remover! Lista vazia");
         }
-        
-        if (tamanho == 1) {
+
+        if (tamanho == 1 && item.equals(primeiro.getDado())) {
+            T dado = primeiro.getDado();
             esvaziaEstrutura();
-            return "Removeu um item";
+            return dado;
         }
-        //tamanho >= 2
+        if (tamanho == 2) {
+            if (item.equals(primeiro.getDado())) {
+                NodoDuplo<T> aux = primeiro;
+                primeiro = ultimo;
+                ultimo.ant = null;
+                tamanho--;
+                return aux.getDado();
+            } else if (item.equals(ultimo.getDado())) {
+                primeiro.prox = null;
+                tamanho--;
+                return ultimo.getDado();
+            } else {
+                return null;
+            }
+        }
         NodoDuplo<T> nodo = primeiro;
         while (nodo != null) {
             if (nodo.getDado().equals(item)) {
-                // nodo encontrado pelo nome
-                //TODO: remover nodo
-                //reduzir tamanho
-                return "Entrada removida com sucesso";
+                //remove o nodo
+                //tamanho--;
+                return nodo.getDado();
             }
             nodo = nodo.prox;
         }
-        return "Entrada nao encontrada. Nao removida";
+        return null;
     }
 }

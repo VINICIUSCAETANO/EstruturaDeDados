@@ -5,7 +5,6 @@
  */
 package main_testes;
 
-import dados.Aluno;
 import dados.Jogo;
 import estruturas_duplas.ContainerGenerico;
 import estruturas_duplas.ListaDupla;
@@ -20,20 +19,27 @@ import exception.EmptyListException;
 public class Testes {
 
     public static void main(String[] args) {
-        ListaSimples<Aluno> lista = new ListaSimples<>();
+        /*ListaSimples<Aluno> lista = new ListaSimples<>();
         for (int i = 0; i < 100; i++) {
             lista.insereNoInicio(new Aluno("Abbada", i));
         }
         System.out.println("Removendo");
         for (int i = 0; i < 99; i++) {
             lista.removeDoFim();
-        }
+        }*/
         
         ListaDupla<Jogo> listaJogos = new ListaDupla<>();
+        ListaDupla<Double> listaDoubles = new ListaDupla<>();
+        listaDoubles.insereNoFim(10.0);
+        listaDoubles.insereNoFim(30.0);
+        //listaDoubles.insereNoFim(40.0);
+        //listaDoubles.insereNoFim(50.0);
+   
+        Double dobl = listaDoubles.remover(10.0);
         try {
-            listaJogos.consultarInicioFim();
+            System.out.println(listaDoubles.consultarInicioFim());
         } catch (EmptyListException e) {
-            System.out.println("Deu erro de lista vazia");
+            System.out.println("Lista vazia");
         }
     }
 }

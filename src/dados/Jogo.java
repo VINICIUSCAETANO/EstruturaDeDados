@@ -68,7 +68,7 @@ public class Jogo {
     
     @Override
     public String toString() {
-        return "Nome : " + nome + ", Genero : " + genero + ", Produtora : " + produtora + ", Ano : " + ano + ", Plataforma : " + plataforma + '\n';
+        return "Nome : " + nome + "   Genero : " + genero + "   Produtora : " + produtora + "   Ano : " + ano + "   Plataforma : " + plataforma + '\n';
     }
 
     @Override

@@ -12,7 +12,8 @@ import exception.EmptyListException;
  * @author Vinicius
  */
 public interface PilhaDuplaI<T> {
-    void insereNoFim(T item);
-    T removeNoFim() throws EmptyListException;
-    String consultarFimInicio();
+    void empilharItem(T item);
+    T desempilharItem() throws EmptyListException;
+    T verTopoItem() throws EmptyListException;
+    String consultarPilha() throws EmptyListException;
 }

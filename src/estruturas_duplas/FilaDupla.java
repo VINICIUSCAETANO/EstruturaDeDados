@@ -19,7 +19,7 @@ public class FilaDupla<T> extends ContainerGenerico<T> implements FilaDuplaI<T> 
     }
 
     @Override
-    public void insereNoInicio(T item) {
+    public void enfileirarItem(T item) {
         long tempoInicio = System.nanoTime();
         if (isVazio()) {
             primeiro = ultimo = new NodoDuplo<>(item);
@@ -34,7 +34,7 @@ public class FilaDupla<T> extends ContainerGenerico<T> implements FilaDuplaI<T> 
     }
 
     @Override
-    public T removeNoFim() throws EmptyListException {
+    public T desenfileirarItem() throws EmptyListException {
         long tempoInicio = System.nanoTime();
         if (isVazio()) {
             throw new EmptyListException("Impossivel remover. Lista vazia");
@@ -59,7 +59,7 @@ public class FilaDupla<T> extends ContainerGenerico<T> implements FilaDuplaI<T> 
     }
 
     @Override
-    public String consultarInicioFim() throws EmptyListException {
+    public String consultarFila() throws EmptyListException {
         long tempoInicio = System.nanoTime();
         StringBuilder strbf = new StringBuilder();
         if (isVazio()) {
